@@ -1,0 +1,5 @@
+1. Draw out what I want my actual website to look like
+2. Change around the code and files to fit the site
+3. Figure out how to host a real database to store data
+4. Figure out how to host server and database from dummy pc
+5. Profit
