@@ -1,13 +1,30 @@
 HOME:
-1. Social Media links
-    - Youtube
-    - Github
-    - Email
-2. Bio
-3. Picture of Media
+1. Page Links
+    - About
+    - Contact
+    - Subscribe
+2. Blog Listing
+    - Drop down of a series of blogs
+    - Link to the blogs
+    - Tags should be clickable
+3. Search Function?
 
 BLOG:
 1. comment feature?
+2. Display blog features
+    - Should be able to display equations and pictures
 
-PROJECTS:
-1. comment feature?
+ABOUT:
+1. Just like a bio and stuff
+
+CONTACT:
+1. Social Media Links
+    - Github
+    - Email
+    - Youtube
+    - LinkedIn?
+2. Resume
+
+SUBSCRIBE:
+1. Email input
+    - save email and send some kind of a notification when I post a new blog
