@@ -1,0 +1,17 @@
+.title {
+    font-size: 18px;
+    text-decoration: none;
+    color: black
+}
+
+.tag {
+    padding-top: 0px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    color: darkgray;
+    font-size: 15px;
+}
+
+.padded-top {
+    margin-top: 20px;
+}

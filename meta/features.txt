@@ -7,5 +7,7 @@ HOME:
 3. Picture of Media
 
 BLOG:
+1. comment feature?
 
 PROJECTS:
+1. comment feature?

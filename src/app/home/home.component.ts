@@ -1,49 +1,36 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HousingLocationComponent } from '../housing-location/housing-location.component';
-import { HousingLocation } from '../housinglocation';
-import { HousingService } from '../housing.service';
+import { RouterModule } from '@angular/router';
+import { BlogListingComponent } from '../blog-listing/blog-listing.component';
+import { Blog } from '../blog'
+import { BlogService } from '../blog.service'
+
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HousingLocationComponent],
+  imports: [CommonModule, RouterModule, BlogListingComponent],
   template: `
-  <section>
-    <form>
-      <input type="text" placeholder="Filter by city" #filter>
-      <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
-    </form>
-  </section>
-  <section class="results">
-  <app-housing-location 
-    *ngFor="let housingLocation of filteredLocationList" 
-    [housingLocation]="housingLocation">
-  </app-housing-location>
-  </section>
+  <div class="main div-border">
+    <p>
+      <b>Daniel Harmon</b> -- Pant Peeer
+    </p>
+    <p>
+      <a [routerLink]="['/about']">about</a> / <a [routerLink]="['/contact']">contact</a> / <a>subscribe</a>
+    </p>
+  </div>
+  <div><app-blog-listing *ngFor="let blog of blogList" 
+    [blog]="blog">
+  </app-blog-listing></div>
   `,
   styleUrls: ['./home.component.css']
 })
 
 export class HomeComponent {
-  housingLocationList: HousingLocation[] = [];
-  housingService: HousingService = inject(HousingService);
-  filteredLocationList: HousingLocation[] = [];
+  blogList: Blog[] = [];
+  housingService: BlogService = inject(BlogService);
 
-  filterResults(text: string) {
-    if (!text) {
-      this.filteredLocationList = this.housingLocationList;
-    }
-  
-    this.filteredLocationList = this.housingLocationList.filter(
-      housingLocation => housingLocation?.city.toLowerCase().includes(text.toLowerCase())
-    );
-  }
-
-  constructor() {
-    this.housingService.getAllHousingLocations().then((housingLocationList: HousingLocation[]) => {
-      this.housingLocationList = housingLocationList;
-      this.filteredLocationList = housingLocationList;
-    });
+  constructor(){
+    this.blogList = this.housingService.getAllBlogs();
   }
 }
