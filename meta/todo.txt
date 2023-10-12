@@ -2,6 +2,7 @@ Content:
 - Generate subscriber abilities
 - Figure out how to imbed images and equations in post content
 - fix date stuff
+- make it so that it says server is down if server is down
 
 - format css for blog page
 - format css for contact page
