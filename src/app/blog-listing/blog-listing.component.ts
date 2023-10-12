@@ -10,7 +10,7 @@ import { Blog } from '../blog'
   template: `
     <div class="main padded-top">
       <a [routerLink]="['/blog', blog.id]" class="title"><b>{{ blog.title }}</b></a>
-      <p class="tag"><b>{{ blog.date.toDateString() }} [ {{blog.tag}} ]</b></p>
+      <p class="tag"><b>{{ blog.date }} [ {{blog.tag}} ]</b></p>
     </div>
   `,
   styleUrls: ['./blog-listing.component.css']

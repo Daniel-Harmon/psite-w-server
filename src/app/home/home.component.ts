@@ -31,6 +31,8 @@ export class HomeComponent {
   housingService: BlogService = inject(BlogService);
 
   constructor(){
-    this.blogList = this.housingService.getAllBlogs();
+    this.housingService.getAllBlogs().then(blogs => {
+      this.blogList = blogs
+    });
   }
 }

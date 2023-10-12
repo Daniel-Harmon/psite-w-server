@@ -1,42 +1,22 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http'
 import { Blog } from './blog'
 
 @Injectable({
   providedIn: 'root'
 })
 export class BlogService {
-  blogList: Blog[] = [
-    {
-      "id": 0,
-      "tag": "piss",
-      "title": "why i like pissing my pants 1",
-      "date": new Date(),
-      "content": "i just love pissing my pants so much, so very fun"
-    },
-    {
-      "id": 1,
-      "tag": "piss",
-      "title": "why i like pissing my pants 2",
-      "date": new Date(),
-      "content": "i just love pissing my pants so much, so very fun"
-    },
-    {
-      "id": 2,
-      "tag": "piss",
-      "title": "why i like pissing my pants 3",
-      "date": new Date(),
-      "content": "i just love pissing my pants so much, so very fun"
-    }
+  
+  url = 'http://104.38.28.206:8081';
 
-  ];
-
-  getAllBlogs(): Blog[] {
-    return this.blogList;
+  async getAllBlogs(): Promise<Blog[]> {
+    const data = await fetch(`${this.url}/blog`);
+    return await data.json() ?? {};
   }
 
-  getBlogById(id: number): Blog | undefined {
-    return this.blogList.find(blog => blog.id === id);
+  async getBlogById(id: number): Promise<Blog[] | undefined> {
+      const data = await fetch(`${this.url}/blog/${id}`);
+      return await data.json() ?? {};
   }
 
-  constructor() { }
 }

@@ -1,18 +1,20 @@
 Content:
 - Generate subscriber abilities
+- Figure out how to imbed images and equations in post content
+- fix date stuff
+
 - format css for blog page
 - format css for contact page
 - format css for about page
-- Figure out how to imbed images and equations in post content
 
-- Figure out the alignment of the header, looks like a pixel too far to the right, also make the title farther than the nativation from my name
+- make sign in function
+- make write blog page
 
+- make comment function?
 
 Not Content:
-- Figure out how to host a real database to store data
-- Figure out how to host server and database from dummy pc
 - Update readme
-- Figure out how to put pictures/data in a blog
+- Figure out the alignment of the header, looks like a pixel too far to the right, also make the title farther than the nativation from my name
 
 
 Ideas:

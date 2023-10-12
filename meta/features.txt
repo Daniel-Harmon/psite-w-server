@@ -2,17 +2,23 @@ HOME:
 1. Page Links
     - About
     - Contact
+    - Community tab?
+        - people post thier own stuff?
     - Subscribe
 2. Blog Listing
     - Drop down of a series of blogs
     - Link to the blogs
     - Tags should be clickable
 3. Search Function?
+4. Sign in function
 
 BLOG:
 1. comment feature?
 2. Display blog features
     - Should be able to display equations and pictures
+3. UPLOAD FEATURE!
+    - need to add a sign in function
+    - also need new page to write stuff in, has to be latex enabled
 
 ABOUT:
 1. Just like a bio and stuff
