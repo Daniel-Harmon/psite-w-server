@@ -1,11 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const Blog = require('./blogSchema.ts');
+const path = require('path');
 let app = express();
 
 //VARS FOR ROUTING
-let ip = "104.38.28.206";
-let port = "8081";
+let ip = "localhost";
+let port = "4200";
 
 mongoose.connect('mongodb://localhost:27017/blogs');
 
@@ -15,23 +16,20 @@ mongoose.connection.once('open', () => {
     console.log('Error connecting to database: ' + error)
 })
 
-// ***THE IP ADDRESS HERE IS LIABLE TO CHANGE***
-let server = app.listen(8081, ip, function(){
+let server = app.listen(port, ip, function(){
     console.log("Server is running!")
 })
 
 // http://104.38.28.206:8081
 
 // GIVE THE MAIN SITE PERMISSIONS
-app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
-    res.header(
-      "Access-Control-Allow-Headers",
-      "Origin, X-Requested-With, Content-Type, Accept"
-    );
-    next();
-  });
+app.use(express.static(path.join(__dirname, '/dist')));
 
+// GET MATHJAX FILES
+app.get('/tex-svg.js', (req, res) => {
+    console.log("I AM WORKING!")
+    res.sendFile(path.resolve('node_modules/mathjax/es5/tex-svg.js'));
+});
 
 //ADD BLOG TO DB
 app.post('/create', (req, res) => {
@@ -91,3 +89,7 @@ app.get("/blog/:id", (req, res) => {
         console.log('Error retreiving data: ' + err)
     })
 })
+
+app.get('*', (req,res) => {
+    res.sendFile(path.resolve('dist/daniel-harmon.com/index.html'));
+});

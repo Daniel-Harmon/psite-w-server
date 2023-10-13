@@ -25,6 +25,10 @@ const routeConfig: Routes = [
       component: BlogComponent,
       title: 'blog'
     },
+    {
+      path: 'tex-svg.js',
+      
+    }
   ];
   
   export default routeConfig;

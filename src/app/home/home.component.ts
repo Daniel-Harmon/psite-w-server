@@ -10,19 +10,7 @@ import { BlogService } from '../blog.service'
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule, RouterModule, BlogListingComponent],
-  template: `
-  <div class="main div-border">
-    <p>
-      <b>Daniel Harmon</b> -- Pant Peeer
-    </p>
-    <p>
-      <a [routerLink]="['/about']">about</a> / <a [routerLink]="['/contact']">contact</a> / <a>subscribe</a>
-    </p>
-  </div>
-  <div><app-blog-listing *ngFor="let blog of blogList" 
-    [blog]="blog">
-  </app-blog-listing></div>
-  `,
+  templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 

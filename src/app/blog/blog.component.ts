@@ -9,13 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
   selector: 'app-blog',
   standalone: true,
   imports: [CommonModule, HttpClientModule],
-  template: `
-    <div class="main">
-      <h3>{{ blog?.title }}</h3>
-      <p><b>{{ blog?.date }} [ {{blog?.tag}} ]</b></p>
-      <p>{{ blog?.content }}</p>
-    </div>
-  `,
+  templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent {
