@@ -1,6 +1,5 @@
 Content:
 - Generate subscriber abilities
-- Figure out how to imbed images and equations in post content
 - fix date stuff
 - make it so that it says server is down if server is down
 
@@ -16,7 +15,8 @@ Content:
 Not Content:
 - Update readme
 - Figure out the alignment of the header, looks like a pixel too far to the right, also make the title farther than the nativation from my name
-
+- Make it so that only authorized users can update the database. 
+- something about the base href is wrong, make it so that daniel-harmon.com isn't a url extension for everything.
 
 Ideas:
 - maybe change url extension to blog name instead of id?

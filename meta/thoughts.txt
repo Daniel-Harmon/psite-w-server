@@ -1,0 +1,2 @@
+- I'm pretty sure my server could be used to just completely clean out the database if anyone accessed the site through 
+their browser and spammed delete requests as an http extension. How do I stop that from happening.

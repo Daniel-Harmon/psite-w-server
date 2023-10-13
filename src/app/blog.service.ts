@@ -7,7 +7,7 @@ import { Blog } from './blog'
 })
 export class BlogService {
   
-  url = 'http://104.38.28.206:8081';
+  url = 'http://localhost:4200';
 
   async getAllBlogs(): Promise<Blog[]> {
     const data = await fetch(`${this.url}/blog`);
