@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, '/dist')));
 
 // GET MATHJAX FILES
 app.get('/tex-svg.js', (req, res) => {
-    console.log("I AM WORKING!")
+    console.log("Retreived MathJax component")
     res.sendFile(path.resolve('node_modules/mathjax/es5/tex-svg.js'));
 });
 
@@ -69,7 +69,7 @@ app.delete('/delete/:id', (req, res) => {
 
 //GET ALL BLOG TAGS IN DB
 
-app.get("/blog", (req, res) => {
+app.get("/blogget", (req, res) => {
     Blog.find({}).then((items) => {
         console.log('Retreived all blog tags!')
         res.send(items)
@@ -81,7 +81,7 @@ app.get("/blog", (req, res) => {
 
 //GET BLOG IN DB
 
-app.get("/blog/:id", (req, res) => {
+app.get("/blogget/:id", (req, res) => {
     Blog.find({id: req.params.id}).then((item) => {
         console.log('Retreived blog: ' + req.params.id)
         res.send(item)
@@ -91,5 +91,5 @@ app.get("/blog/:id", (req, res) => {
 })
 
 app.get('*', (req,res) => {
-    res.sendFile(path.resolve('dist/daniel-harmon.com/index.html'));
+    res.sendFile(path.resolve('dist/index.html'));
 });
